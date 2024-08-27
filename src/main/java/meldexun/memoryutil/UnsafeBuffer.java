@@ -1,6 +1,6 @@
 package meldexun.memoryutil;
 
-public class UnsafeBuffer implements MemoryAccess, AutoCloseable {
+public class UnsafeBuffer implements MemoryAccess.SingleRegister, AutoCloseable {
 
 	private final long address;
 	private final long capacity;
