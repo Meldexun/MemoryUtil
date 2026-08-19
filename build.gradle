@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'idea'
+    id 'com.vanniktech.maven.publish' version '0.37.0'
 }
 
 version = '1.1.0'
@@ -25,4 +26,37 @@ jar {
         'Implementation-Vendor': 'Meldexun',
         'Implementation-Timestamp': new Date().format("yyyy-MM-dd HH:mm:ss")
     ])
+}
+
+mavenPublishing {
+    coordinates('io.github.meldexun', 'memoryutil', version)
+
+    pom {
+        name = 'MemoryUtil'
+        description = 'Memory utility that allows for fast, unchecked access to objects, arrays or direct memory through sun.misc.Unsafe.'
+        inceptionYear = '2024'
+        url = 'https://github.com/Meldexun/MemoryUtil'
+        licenses {
+            license {
+                name = 'The MIT License'
+                url = 'https://opensource.org/license/mit'
+                distribution = 'https://opensource.org/license/mit'
+            }
+        }
+        developers {
+            developer {
+                id = 'meldexun'
+                name = 'Meldexun'
+                url = 'https://github.com/Meldexun'
+            }
+        }
+        scm {
+            url = 'https://github.com/Meldexun/MemoryUtil'
+            connection = 'scm:git:git://github.com/Meldexun/MemoryUtil.git'
+            developerConnection = 'scm:git:ssh://git@github.com/Meldexun/MemoryUtil.git'
+        }
+    }
+
+    publishToMavenCentral()
+    signAllPublications()
 }
