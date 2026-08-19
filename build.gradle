@@ -11,6 +11,10 @@ base.archivesName = 'MemoryUtil'
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 jar {
+    from('LICENSE') {
+        rename { 'META-INF/' + it }
+    }
+
     manifest.attributes([
         'Built-By': 'Meldexun',
         'Specification-Title': base.archivesName,
