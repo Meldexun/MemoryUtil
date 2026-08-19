@@ -6,7 +6,7 @@ plugins {
 
 version = '1.1.0'
 group = 'meldexun.memoryutil'
-base.archivesName = 'MemoryUtil'
+base.archivesName = 'memoryutil'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
@@ -17,10 +17,10 @@ jar {
 
     manifest.attributes([
         'Built-By': 'Meldexun',
-        'Specification-Title': base.archivesName,
+        'Specification-Title': 'MemoryUtil',
         'Specification-Version': version,
         'Specification-Vendor': 'Meldexun',
-        'Implementation-Title': base.archivesName,
+        'Implementation-Title': 'MemoryUtil',
         'Implementation-Version': version,
         'Implementation-Vendor': 'Meldexun',
         'Implementation-Timestamp': new Date().format("yyyy-MM-dd HH:mm:ss")
